@@ -7,14 +7,16 @@ If I find the time I'll add some functionality.
 # Instructions 
 open MaxGenie.maxpat and you should basically good to go.
 
-![MaxGenie](https://github.com/chrislos/MaxGenie/blob/master/max_genie.png)
-
 # Requirements
 MaxMSP 8 (NodeJs support)
+
+![MaxGenie](https://github.com/chrislos/MaxGenie/blob/master/max_genie.png)
 
 # Note
 Only tested on OSX High Sierra
 
+
+Have fun playing around!
 
 
 
