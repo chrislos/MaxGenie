@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Piano Genie</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link id="favicon" rel="icon" href="img/icon.png" type="image/x-icon">
+    <script src="lib/magenta.js"></script>
+    <script src="lib/socket-io.js"></script>
+    <script src="/helpers.js" defer></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="splash">
+      <h1>Piano Genie</h1>
+      <p class="built-with">
+        Built with <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a>. Learn more about <a target="_blank" href="https://magenta.tensorflow.org/pianogenie">how it works</a>,
+        or see the code on <a target="_blank" href="https://glitch.com/edit/#!/piano-genie">Glitch</a>.
+      </p>
+    </div>
+
+    <div class="loaded" hidden>
+      <div class="background"></div>
+      <canvas id="canvas"></canvas>
+      <svg id="svg"></svg>
+
+      <div class="controls" id="controls">
+        <button class="color-0" id="btn0" data-id="0"><span>1</span></button>
+        <button class="color-1" id="btn1" data-id="1"><span>2</span></button>
+        <button class="color-2" id="btn2" data-id="2"><span>3</span></button>
+        <button class="color-3" id="btn3" data-id="3"><span>4</span></button>
+        <button class="color-4" id="btn4" data-id="4"><span>5</span></button>
+        <button class="color-5" id="btn5" data-id="5"><span>6</span></button>
+        <button class="color-6" id="btn6" data-id="6"><span>7</span></button>
+        <button class="color-7" id="btn7" data-id="7"><span>8</span></button>
+        <button class="settings" onclick="settingsBox.hidden = !settingsBox.hidden" id="btnSettings" hidden>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 20 20"><path fill="none" d="M0 0h20v20H0V0z"/><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="dialog" id="settingsBox" hidden>
+      <h2>MIDI Settings</h2>
+
+      <p id="midiNotSupported">
+        Unfortunately, this browser does not support WebMIDI, which is only
+        supported in Chrome and Opera.
+      </p>
+      <p id="midiSupported">
+        Use MIDI Output:
+        <label class="radio">
+          <input name="midi" type="radio" id="radioMidiYes">
+          <span class="control-indicator"></span>
+          Yes
+        </label>
+        <label class="radio">
+          <input name="midi" type="radio" id="radioMidiNo" checked>
+          <span class="control-indicator"></span>
+          No
+        </label>
+
+        <div id="midiOutBox" hidden>
+          <label>MIDI Instruments:
+            <select id="selectOut"></select>
+          </label>
+        </div>
+      </p>
+      <button class="splash-button small" onclick="settingsBox.hidden = !settingsBox.hidden">Close</button>
+    </div>
+  </body>
+</html>
