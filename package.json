@@ -22,6 +22,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "max-api": "^1.0.1",
-    "socket.io": "^2.4.0"
+    "socket.io": "^2.5.0"
   }
 }
