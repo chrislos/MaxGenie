@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/chrislos/MaxGenie#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "max-api": "^1.0.1",
     "socket.io": "^2.4.0"
   }
